@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ESP8266 Data Receiver</title>
+</head>
+<body>
+    <h1>Data Received</h1>
+    
+    <p>Data received from ESP8266:</p>
+    
+    <div id="receivedData"></div>
+
+    <script>
+        function updateReceivedData() {
+            var receivedData = document.getElementById('receivedData');
+            var url = window.location.href;
+            var queryParams = url.substring(url.indexOf('?') + 1);
+
+            receivedData.textContent = decodeURIComponent(queryParams);
+        }
+
+        window.onload = updateReceivedData;
+    </script>
+</body>
+</html>
